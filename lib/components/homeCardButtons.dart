@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:converter/constants.dart';
+import 'package:uni_convertido/constants.dart';
 
 class allUnits extends StatelessWidget {
   allUnits({required this.icon, required this.label, required this.onPressed});

@@ -1,8 +1,8 @@
-import 'package:converter/components/bar.dart';
+import 'package:uni_convertido/components/bar.dart';
 import 'package:flutter/material.dart';
-import 'package:converter/lists/data_list.dart';
+import 'package:uni_convertido/lists/data_list.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:converter/constants.dart';
+import 'package:uni_convertido/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:io' show Platform;
 
@@ -38,7 +38,7 @@ class _DataState extends State<Data> {
       items: dropdownItems,
       onChanged: (value) {
         setState(
-              () {
+          () {
             selectedConversion = value.toString();
           },
         );
@@ -84,7 +84,7 @@ class _DataState extends State<Data> {
       items: dropdownItems,
       onChanged: (value) {
         setState(
-              () {
+          () {
             selectedConversion2 = value.toString();
           },
         );
@@ -109,134 +109,134 @@ class _DataState extends State<Data> {
     );
   }
 
-  void conversion(){
-    if (selectedConversion == 'Bytes' && selectedConversion2 == 'Kilobyte'){
+  void conversion() {
+    if (selectedConversion == selectedConversion2) {
+      result = _numbers;
+    } else if (selectedConversion == 'Bytes' &&
+        selectedConversion2 == 'Kilobyte') {
       result = _numbers / 1000;
-    }
-    else if (selectedConversion == 'Kilobyte' && selectedConversion2 == 'Bytes'){
+    } else if (selectedConversion == 'Kilobyte' &&
+        selectedConversion2 == 'Bytes') {
       result = _numbers * 1000;
-    }
-    else if (selectedConversion == 'Bytes' && selectedConversion2 == 'Megabyte'){
+    } else if (selectedConversion == 'Bytes' &&
+        selectedConversion2 == 'Megabyte') {
       result = _numbers / 1e+6;
-    }
-    else if (selectedConversion == 'Megabyte' && selectedConversion2 == 'Bytes'){
+    } else if (selectedConversion == 'Megabyte' &&
+        selectedConversion2 == 'Bytes') {
       result = _numbers * 1e+6;
-    }
-    else if (selectedConversion == 'Bytes' && selectedConversion2 == 'Bits'){
+    } else if (selectedConversion == 'Bytes' && selectedConversion2 == 'Bits') {
       result = _numbers * 8;
-    }
-    else if (selectedConversion == 'Bits' && selectedConversion2 == 'Bytes'){
+    } else if (selectedConversion == 'Bits' && selectedConversion2 == 'Bytes') {
       result = _numbers / 8;
-    }
-    else if (selectedConversion == 'Bytes' && selectedConversion2 == 'Gigabyte'){
+    } else if (selectedConversion == 'Bytes' &&
+        selectedConversion2 == 'Gigabyte') {
       result = _numbers / 1e+9;
-    }
-    else if (selectedConversion == 'Gigabyte' && selectedConversion2 == 'Bytes'){
+    } else if (selectedConversion == 'Gigabyte' &&
+        selectedConversion2 == 'Bytes') {
       result = _numbers * 1e+9;
-    }
-    else if (selectedConversion == 'Bytes' && selectedConversion2 == 'Petabyte'){
+    } else if (selectedConversion == 'Bytes' &&
+        selectedConversion2 == 'Petabyte') {
       result = _numbers / 1e+15;
-    }
-    else if (selectedConversion == 'Petabyte' && selectedConversion2 == 'Bytes'){
+    } else if (selectedConversion == 'Petabyte' &&
+        selectedConversion2 == 'Bytes') {
       result = _numbers * 1e+15;
-    }
-    else if (selectedConversion == 'Bytes' && selectedConversion2 == 'Pebibyte'){
+    } else if (selectedConversion == 'Bytes' &&
+        selectedConversion2 == 'Pebibyte') {
       result = _numbers / 1.126e+15;
-    }
-    else if (selectedConversion == 'Pebibyte' && selectedConversion2 == 'Bytes'){
+    } else if (selectedConversion == 'Pebibyte' &&
+        selectedConversion2 == 'Bytes') {
       result = _numbers * 1.126e+15;
-    }
-    else if (selectedConversion == 'Kilobyte' && selectedConversion2 == 'Megabyte'){
+    } else if (selectedConversion == 'Kilobyte' &&
+        selectedConversion2 == 'Megabyte') {
       result = _numbers / 1000;
-    }
-    else if (selectedConversion == 'Megabyte' && selectedConversion2 == 'Kilobyte'){
+    } else if (selectedConversion == 'Megabyte' &&
+        selectedConversion2 == 'Kilobyte') {
       result = _numbers * 1000;
-    }
-    else if (selectedConversion == 'Kilobyte' && selectedConversion2 == 'Bits'){
+    } else if (selectedConversion == 'Kilobyte' &&
+        selectedConversion2 == 'Bits') {
       result = _numbers * 8000;
-    }
-    else if (selectedConversion == 'Bits' && selectedConversion2 == 'Kilobyte'){
+    } else if (selectedConversion == 'Bits' &&
+        selectedConversion2 == 'Kilobyte') {
       result = _numbers / 8000;
-    }
-    else if (selectedConversion == 'Kilobyte' && selectedConversion2 == 'Gigabyte'){
+    } else if (selectedConversion == 'Kilobyte' &&
+        selectedConversion2 == 'Gigabyte') {
       result = _numbers / 1e+6;
-    }
-    else if (selectedConversion == 'Gigabyte' && selectedConversion2 == 'Kilobyte'){
+    } else if (selectedConversion == 'Gigabyte' &&
+        selectedConversion2 == 'Kilobyte') {
       result = _numbers * 1e+6;
-    }
-    else if (selectedConversion == 'Kilobyte' && selectedConversion2 == 'Petabyte'){
+    } else if (selectedConversion == 'Kilobyte' &&
+        selectedConversion2 == 'Petabyte') {
       result = _numbers / 1e+12;
-    }
-    else if (selectedConversion == 'Petabyte' && selectedConversion2 == 'Kilobyte'){
+    } else if (selectedConversion == 'Petabyte' &&
+        selectedConversion2 == 'Kilobyte') {
       result = _numbers * 1e+12;
-    }
-    else if (selectedConversion == 'Kilobyte' && selectedConversion2 == 'Pebibyte'){
+    } else if (selectedConversion == 'Kilobyte' &&
+        selectedConversion2 == 'Pebibyte') {
       result = _numbers / 1.126e+12;
-    }
-    else if (selectedConversion == 'Pebibyte' && selectedConversion2 == 'Kilobyte'){
+    } else if (selectedConversion == 'Pebibyte' &&
+        selectedConversion2 == 'Kilobyte') {
       result = _numbers * 1.126e+12;
-    }
-    else if (selectedConversion == 'Megabyte' && selectedConversion2 == 'Bits'){
+    } else if (selectedConversion == 'Megabyte' &&
+        selectedConversion2 == 'Bits') {
       result = _numbers * 8e+6;
-    }
-    else if (selectedConversion == 'Bits' && selectedConversion2 == 'Megabyte'){
+    } else if (selectedConversion == 'Bits' &&
+        selectedConversion2 == 'Megabyte') {
       result = _numbers / 8e+6;
-    }
-    else if (selectedConversion == 'Megabyte' && selectedConversion2 == 'Gigabyte'){
+    } else if (selectedConversion == 'Megabyte' &&
+        selectedConversion2 == 'Gigabyte') {
       result = _numbers / 1000;
-    }
-    else if (selectedConversion == 'Gigabyte' && selectedConversion2 == 'Megabyte'){
+    } else if (selectedConversion == 'Gigabyte' &&
+        selectedConversion2 == 'Megabyte') {
       result = _numbers * 1000;
-    }
-    else if (selectedConversion == 'Megabyte' && selectedConversion2 == 'Petabyte'){
+    } else if (selectedConversion == 'Megabyte' &&
+        selectedConversion2 == 'Petabyte') {
       result = _numbers / 1e+9;
-    }
-    else if (selectedConversion == 'Petabyte' && selectedConversion2 == 'Megabyte'){
+    } else if (selectedConversion == 'Petabyte' &&
+        selectedConversion2 == 'Megabyte') {
       result = _numbers * 1e+9;
-    }
-    else if (selectedConversion == 'Megabyte' && selectedConversion2 == 'Pebibyte'){
+    } else if (selectedConversion == 'Megabyte' &&
+        selectedConversion2 == 'Pebibyte') {
       result = _numbers / 1.126e+9;
-    }
-    else if (selectedConversion == 'Pebibyte' && selectedConversion2 == 'Megabyte'){
+    } else if (selectedConversion == 'Pebibyte' &&
+        selectedConversion2 == 'Megabyte') {
       result = _numbers * 1.126e+9;
-    }
-    else if (selectedConversion == 'Bits' && selectedConversion2 == 'Gigabyte'){
+    } else if (selectedConversion == 'Bits' &&
+        selectedConversion2 == 'Gigabyte') {
       result = _numbers / 8e+9;
-    }
-    else if (selectedConversion == 'Gigabyte' && selectedConversion2 == 'Bits'){
+    } else if (selectedConversion == 'Gigabyte' &&
+        selectedConversion2 == 'Bits') {
       result = _numbers * 8e+9;
-    }
-    else if (selectedConversion == 'Bits' && selectedConversion2 == 'Petabyte'){
+    } else if (selectedConversion == 'Bits' &&
+        selectedConversion2 == 'Petabyte') {
       result = _numbers / 8e+15;
-    }
-    else if (selectedConversion == 'Petabyte' && selectedConversion2 == 'Bits'){
+    } else if (selectedConversion == 'Petabyte' &&
+        selectedConversion2 == 'Bits') {
       result = _numbers * 8e+15;
-    }
-    else if (selectedConversion == 'Bits' && selectedConversion2 == 'Pebibyte'){
+    } else if (selectedConversion == 'Bits' &&
+        selectedConversion2 == 'Pebibyte') {
       result = _numbers / 9.007e+15;
-    }
-    else if (selectedConversion == 'Pebibyte' && selectedConversion2 == 'Bits'){
+    } else if (selectedConversion == 'Pebibyte' &&
+        selectedConversion2 == 'Bits') {
       result = _numbers * 9.007e+15;
-    }
-    else if (selectedConversion == 'Gigabyte' && selectedConversion2 == 'Petabyte'){
+    } else if (selectedConversion == 'Gigabyte' &&
+        selectedConversion2 == 'Petabyte') {
       result = _numbers / 1e+6;
-    }
-    else if (selectedConversion == 'Petabyte' && selectedConversion2 == 'Gigabyte'){
+    } else if (selectedConversion == 'Petabyte' &&
+        selectedConversion2 == 'Gigabyte') {
       result = _numbers * 1e+6;
-    }
-    else if (selectedConversion == 'Gigabyte' && selectedConversion2 == 'Pebibyte'){
+    } else if (selectedConversion == 'Gigabyte' &&
+        selectedConversion2 == 'Pebibyte') {
       result = _numbers / 1.126e+6;
-    }
-    else if (selectedConversion == 'Pebibyte' && selectedConversion2 == 'Gigabyte'){
+    } else if (selectedConversion == 'Pebibyte' &&
+        selectedConversion2 == 'Gigabyte') {
       result = _numbers * 1.126e+6;
-    }
-    else if (selectedConversion == 'Petabyte' && selectedConversion2 == 'Pebibyte'){
+    } else if (selectedConversion == 'Petabyte' &&
+        selectedConversion2 == 'Pebibyte') {
       result = _numbers / 1.126;
-    }
-    else if (selectedConversion == 'Pebibyte' && selectedConversion2 == 'Petabyte'){
+    } else if (selectedConversion == 'Pebibyte' &&
+        selectedConversion2 == 'Petabyte') {
       result = _numbers * 1.126;
-    }
-    else {
+    } else {
       result = 0;
     }
   }
@@ -268,7 +268,7 @@ class _DataState extends State<Data> {
                             _numbers = number;
                             conversion();
                           });
-                        } else{
+                        } else {
                           setState(() {
                             result = 0;
                           });
@@ -290,7 +290,11 @@ class _DataState extends State<Data> {
             child: Container(
               alignment: Alignment.topRight,
               padding: EdgeInsets.only(right: 80.0),
-              child: Icon(FontAwesomeIcons.arrowDown, size: 45.0, color: Colors.deepPurpleAccent,),
+              child: Icon(
+                FontAwesomeIcons.arrowDown,
+                size: 45.0,
+                color: Colors.deepPurpleAccent,
+              ),
             ),
           ),
           Expanded(

@@ -1,6 +1,6 @@
-# converter
+# uni_convertido
 
-A new Flutter project.
+An app that converts units
 
 ## Getting Started
 

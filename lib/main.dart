@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:converter/screens/home.dart';
+import 'package:uni_convertido/screens/home.dart';
 
 void main() {
   runApp(const MyApp());

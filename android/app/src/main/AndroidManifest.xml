@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.converter">
+    package="com.brothers.uni_convertido">
    <application
-        android:label="Uni Convertidor"
+        android:label="Uni Convertido"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

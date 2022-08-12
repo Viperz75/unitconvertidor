@@ -71,3 +71,7 @@ const kAbout = TextStyle(
   fontSize: 24.0,
   fontWeight: FontWeight.bold
 );
+
+const kCompanyText = TextStyle(
+  fontSize: 23.0
+);

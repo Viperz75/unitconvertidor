@@ -1,10 +1,10 @@
-import 'package:converter/components/bar.dart';
+import 'package:uni_convertido/components/bar.dart';
 import 'package:flutter/material.dart';
-import 'package:converter/constants.dart';
+import 'package:uni_convertido/constants.dart';
 import 'dart:io' show Platform;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:converter/lists/volume_list.dart';
+import 'package:uni_convertido/lists/volume_list.dart';
 
 class Volume extends StatefulWidget {
   const Volume({Key? key}) : super(key: key);
@@ -38,7 +38,7 @@ class _VolumeState extends State<Volume> {
       items: dropdownItems,
       onChanged: (value) {
         setState(
-              () {
+          () {
             selectedConversion = value.toString();
           },
         );
@@ -56,9 +56,7 @@ class _VolumeState extends State<Volume> {
     return CupertinoPicker(
       backgroundColor: Colors.white,
       itemExtent: 32.8,
-      onSelectedItemChanged: (selectedIndex) {
-        print(selectedIndex);
-      },
+      onSelectedItemChanged: (selectedIndex) {},
       children: widgetItems,
     );
   }
@@ -84,7 +82,7 @@ class _VolumeState extends State<Volume> {
       items: dropdownItems,
       onChanged: (value) {
         setState(
-              () {
+          () {
             selectedConversion2 = value.toString();
           },
         );
@@ -102,51 +100,51 @@ class _VolumeState extends State<Volume> {
     return CupertinoPicker(
       backgroundColor: Colors.white,
       itemExtent: 32.8,
-      onSelectedItemChanged: (selectedIndex) {
-        print(selectedIndex);
-      },
+      onSelectedItemChanged: (selectedIndex) {},
       children: widgetItems,
     );
   }
 
-  void conversion(){
-    if (selectedConversion == 'Liter' && selectedConversion2 == 'Milliliter'){
+  void conversion() {
+    if (selectedConversion == selectedConversion2) {
+      result = _numbers;
+    } else if (selectedConversion == 'Liter' &&
+        selectedConversion2 == 'Milliliter') {
       result = _numbers * 1000;
-    }
-    else if (selectedConversion == 'Milliliter' && selectedConversion2 == 'Liter'){
+    } else if (selectedConversion == 'Milliliter' &&
+        selectedConversion2 == 'Liter') {
       result = _numbers / 1000;
-    }
-    else if (selectedConversion == 'Liter' && selectedConversion2 == 'Cubic Feet'){
+    } else if (selectedConversion == 'Liter' &&
+        selectedConversion2 == 'Cubic Feet') {
       result = _numbers / 28.317;
-    }
-    else if (selectedConversion == 'Cubic Feet' && selectedConversion2 == 'Liter'){
+    } else if (selectedConversion == 'Cubic Feet' &&
+        selectedConversion2 == 'Liter') {
       result = _numbers * 28.317;
-    }
-    else if (selectedConversion == 'Liter' && selectedConversion2 == 'Cubic Inch'){
+    } else if (selectedConversion == 'Liter' &&
+        selectedConversion2 == 'Cubic Inch') {
       result = _numbers * 61.024;
-    }
-    else if (selectedConversion == 'Cubic Inch' && selectedConversion2 == 'Liter'){
+    } else if (selectedConversion == 'Cubic Inch' &&
+        selectedConversion2 == 'Liter') {
       result = _numbers / 61.024;
-    }
-    else if (selectedConversion == 'Milliliter' && selectedConversion2 == 'Cubic Feet'){
+    } else if (selectedConversion == 'Milliliter' &&
+        selectedConversion2 == 'Cubic Feet') {
       result = _numbers / 28320;
-    }
-    else if (selectedConversion == 'Cubic Feet' && selectedConversion2 == 'Milliliter'){
+    } else if (selectedConversion == 'Cubic Feet' &&
+        selectedConversion2 == 'Milliliter') {
       result = _numbers * 28320;
-    }
-    else if (selectedConversion == 'Milliliter' && selectedConversion2 == 'Cubic Inch'){
+    } else if (selectedConversion == 'Milliliter' &&
+        selectedConversion2 == 'Cubic Inch') {
       result = _numbers / 16.387;
-    }
-    else if (selectedConversion == 'Cubic Inch' && selectedConversion2 == 'Milliliter'){
+    } else if (selectedConversion == 'Cubic Inch' &&
+        selectedConversion2 == 'Milliliter') {
       result = _numbers * 16.387;
-    }
-    else if (selectedConversion == 'Cubic Feet' && selectedConversion2 == 'Cubic Inch'){
+    } else if (selectedConversion == 'Cubic Feet' &&
+        selectedConversion2 == 'Cubic Inch') {
       result = _numbers * 1728;
-    }
-    else if (selectedConversion == 'Cubic Inch' && selectedConversion2 == 'Cubic Feet'){
+    } else if (selectedConversion == 'Cubic Inch' &&
+        selectedConversion2 == 'Cubic Feet') {
       result = _numbers / 1728;
-    }
-    else{
+    } else {
       result = 0;
     }
   }
@@ -178,7 +176,7 @@ class _VolumeState extends State<Volume> {
                             _numbers = number;
                             conversion();
                           });
-                        } else{
+                        } else {
                           setState(() {
                             result = 0;
                           });
@@ -200,7 +198,11 @@ class _VolumeState extends State<Volume> {
             child: Container(
               alignment: Alignment.topRight,
               padding: EdgeInsets.only(right: 80.0),
-              child: Icon(FontAwesomeIcons.arrowDown, size: 45.0, color: Colors.deepPurpleAccent,),
+              child: Icon(
+                FontAwesomeIcons.arrowDown,
+                size: 45.0,
+                color: Colors.deepPurpleAccent,
+              ),
             ),
           ),
           Expanded(

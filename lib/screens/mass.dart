@@ -1,8 +1,8 @@
-import 'package:converter/components/bar.dart';
+import 'package:uni_convertido/components/bar.dart';
 import 'package:flutter/material.dart';
-import 'package:converter/lists/mass_list.dart';
+import 'package:uni_convertido/lists/mass_list.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:converter/constants.dart';
+import 'package:uni_convertido/constants.dart';
 import 'dart:io' show Platform;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -38,7 +38,7 @@ class _MassState extends State<Mass> {
       items: dropdownItems,
       onChanged: (value) {
         setState(
-              () {
+          () {
             selectedConversion = value.toString();
           },
         );
@@ -56,9 +56,7 @@ class _MassState extends State<Mass> {
     return CupertinoPicker(
       backgroundColor: Colors.white,
       itemExtent: 32.8,
-      onSelectedItemChanged: (selectedIndex) {
-        print(selectedIndex);
-      },
+      onSelectedItemChanged: (selectedIndex) {},
       children: widgetItems,
     );
   }
@@ -84,7 +82,7 @@ class _MassState extends State<Mass> {
       items: dropdownItems,
       onChanged: (value) {
         setState(
-              () {
+          () {
             selectedConversion2 = value.toString();
           },
         );
@@ -109,98 +107,94 @@ class _MassState extends State<Mass> {
     );
   }
 
-  void conversion(){
-    if (selectedConversion == 'Tons' && selectedConversion2 == 'Pound'){
+  void conversion() {
+    if (selectedConversion == selectedConversion2) {
+      result = _numbers;
+    } else if (selectedConversion == 'Tons' && selectedConversion2 == 'Pound') {
       result = _numbers * 2000;
-    }
-    else if (selectedConversion == 'Pound' && selectedConversion2 == 'Tons'){
+    } else if (selectedConversion == 'Pound' && selectedConversion2 == 'Tons') {
       result = _numbers / 2000;
-    }
-    else if (selectedConversion == 'Tons' && selectedConversion2 == 'Kilogram'){
+    } else if (selectedConversion == 'Tons' &&
+        selectedConversion2 == 'Kilogram') {
       result = _numbers * 907.2;
-    }
-    else if (selectedConversion == 'Kilogram' && selectedConversion2 == 'Tons'){
+    } else if (selectedConversion == 'Kilogram' &&
+        selectedConversion2 == 'Tons') {
       result = _numbers / 907.2;
-    }
-    else if (selectedConversion == 'Tons' && selectedConversion2 == 'Grams'){
+    } else if (selectedConversion == 'Tons' && selectedConversion2 == 'Grams') {
       result = _numbers * 907200;
-    }
-    else if (selectedConversion == 'Grams' && selectedConversion2 == 'Tons'){
+    } else if (selectedConversion == 'Grams' && selectedConversion2 == 'Tons') {
       result = _numbers / 907200;
-    }
-    else if (selectedConversion == 'Tons' && selectedConversion2 == 'Milligrams'){
-      result = _numbers *  9.072e+8;
-    }
-    else if (selectedConversion == 'Milligrams' && selectedConversion2 == 'Tons'){
-      result = _numbers /  9.072e+8;
-    }
-    else if (selectedConversion == 'Tons' && selectedConversion2 == 'Ounce'){
-      result = _numbers *  32000;
-    }
-    else if (selectedConversion == 'Ounce' && selectedConversion2 == 'Tons'){
-      result = _numbers /  32000;
-    }
-    else if (selectedConversion == 'Pound' && selectedConversion2 == 'Kilogram'){
+    } else if (selectedConversion == 'Tons' &&
+        selectedConversion2 == 'Milligrams') {
+      result = _numbers * 9.072e+8;
+    } else if (selectedConversion == 'Milligrams' &&
+        selectedConversion2 == 'Tons') {
+      result = _numbers / 9.072e+8;
+    } else if (selectedConversion == 'Tons' && selectedConversion2 == 'Ounce') {
+      result = _numbers * 32000;
+    } else if (selectedConversion == 'Ounce' && selectedConversion2 == 'Tons') {
+      result = _numbers / 32000;
+    } else if (selectedConversion == 'Pound' &&
+        selectedConversion2 == 'Kilogram') {
       result = _numbers / 2.205;
-    }
-    else if (selectedConversion == 'Kilogram' && selectedConversion2 == 'Pound'){
+    } else if (selectedConversion == 'Kilogram' &&
+        selectedConversion2 == 'Pound') {
       result = _numbers * 2.205;
-    }
-    else if (selectedConversion == 'Pound' && selectedConversion2 == 'Grams'){
+    } else if (selectedConversion == 'Pound' &&
+        selectedConversion2 == 'Grams') {
       result = _numbers * 453.6;
-    }
-    else if (selectedConversion == 'Grams' && selectedConversion2 == 'Pound'){
+    } else if (selectedConversion == 'Grams' &&
+        selectedConversion2 == 'Pound') {
       result = _numbers / 453.6;
-    }
-    else if (selectedConversion == 'Pound' && selectedConversion2 == 'Milligrams'){
+    } else if (selectedConversion == 'Pound' &&
+        selectedConversion2 == 'Milligrams') {
       result = _numbers * 453600;
-    }
-    else if (selectedConversion == 'Milligrams' && selectedConversion2 == 'Pound'){
+    } else if (selectedConversion == 'Milligrams' &&
+        selectedConversion2 == 'Pound') {
       result = _numbers / 453600;
-    }
-    else if (selectedConversion == 'Pound' && selectedConversion2 == 'Ounce'){
+    } else if (selectedConversion == 'Pound' &&
+        selectedConversion2 == 'Ounce') {
       result = _numbers * 16;
-    }
-    else if (selectedConversion == 'Ounce' && selectedConversion2 == 'Pound'){
+    } else if (selectedConversion == 'Ounce' &&
+        selectedConversion2 == 'Pound') {
       result = _numbers / 16;
-    }
-    else if (selectedConversion == 'Kilogram' && selectedConversion2 == 'Grams'){
+    } else if (selectedConversion == 'Kilogram' &&
+        selectedConversion2 == 'Grams') {
       result = _numbers * 1000;
-    }
-    else if (selectedConversion == 'Grams' && selectedConversion2 == 'Kilogram'){
+    } else if (selectedConversion == 'Grams' &&
+        selectedConversion2 == 'Kilogram') {
       result = _numbers / 1000;
-    }
-    else if (selectedConversion == 'Kilogram' && selectedConversion2 == 'Milligrams'){
+    } else if (selectedConversion == 'Kilogram' &&
+        selectedConversion2 == 'Milligrams') {
       result = _numbers * 1e+6;
-    }
-    else if (selectedConversion == 'Milligrams' && selectedConversion2 == 'Kilogram'){
+    } else if (selectedConversion == 'Milligrams' &&
+        selectedConversion2 == 'Kilogram') {
       result = _numbers / 1e+6;
-    }
-    else if (selectedConversion == 'Kilogram' && selectedConversion2 == 'Ounce'){
+    } else if (selectedConversion == 'Kilogram' &&
+        selectedConversion2 == 'Ounce') {
       result = _numbers * 35.274;
-    }
-    else if (selectedConversion == 'Ounce' && selectedConversion2 == 'Kilogram'){
+    } else if (selectedConversion == 'Ounce' &&
+        selectedConversion2 == 'Kilogram') {
       result = _numbers / 35.274;
-    }
-    else if (selectedConversion == 'Grams' && selectedConversion2 == 'Milligrams'){
+    } else if (selectedConversion == 'Grams' &&
+        selectedConversion2 == 'Milligrams') {
       result = _numbers * 1000;
-    }
-    else if (selectedConversion == 'Milligrams' && selectedConversion2 == 'Grams'){
+    } else if (selectedConversion == 'Milligrams' &&
+        selectedConversion2 == 'Grams') {
       result = _numbers / 1000;
-    }
-    else if (selectedConversion == 'Grams' && selectedConversion2 == 'Ounce'){
+    } else if (selectedConversion == 'Grams' &&
+        selectedConversion2 == 'Ounce') {
       result = _numbers / 28.35;
-    }
-    else if (selectedConversion == 'Ounce' && selectedConversion2 == 'Grams'){
+    } else if (selectedConversion == 'Ounce' &&
+        selectedConversion2 == 'Grams') {
       result = _numbers * 28.35;
-    }
-    else if (selectedConversion == 'Milligrams' && selectedConversion2 == 'Ounce'){
+    } else if (selectedConversion == 'Milligrams' &&
+        selectedConversion2 == 'Ounce') {
       result = _numbers / 28350;
-    }
-    else if (selectedConversion == 'Ounce' && selectedConversion2 == 'Milligrams'){
+    } else if (selectedConversion == 'Ounce' &&
+        selectedConversion2 == 'Milligrams') {
       result = _numbers * 28350;
-    }
-    else{
+    } else {
       result = 0;
     }
   }
@@ -232,7 +226,7 @@ class _MassState extends State<Mass> {
                             _numbers = number;
                             conversion();
                           });
-                        } else{
+                        } else {
                           setState(() {
                             result = 0;
                           });
@@ -254,7 +248,11 @@ class _MassState extends State<Mass> {
             child: Container(
               alignment: Alignment.topRight,
               padding: EdgeInsets.only(right: 80.0),
-              child: Icon(FontAwesomeIcons.arrowDown, size: 45.0, color: Colors.deepPurpleAccent,),
+              child: Icon(
+                FontAwesomeIcons.arrowDown,
+                size: 45.0,
+                color: Colors.deepPurpleAccent,
+              ),
             ),
           ),
           Expanded(
@@ -283,4 +281,3 @@ class _MassState extends State<Mass> {
     );
   }
 }
-

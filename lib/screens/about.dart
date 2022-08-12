@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:converter/components/bar.dart';
-import 'package:converter/constants.dart';
+import 'package:uni_convertido/components/bar.dart';
+import 'package:uni_convertido/constants.dart';
 
 class About extends StatefulWidget {
   const About({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class _AboutState extends State<About> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Uni Convertido'),
+        title: Text('About'),
         backgroundColor: Color(0xff6b02a8),
       ),
       drawer: Bar(),
@@ -81,13 +81,16 @@ class _AboutState extends State<About> {
               ),
             ),
             const SizedBox(height: 16),
-            const Text('About', style: kAbout),
             const SizedBox(height: 16),
             const Text(
               'A Programmer living in Bangladesh. I am currently studying, besides I make Web, Desktop & Mobile Applications.',
               style: kDetailTextPara,
               textAlign: TextAlign.justify,
             ),
+            const Center(child:Padding(
+              padding: EdgeInsets.only(top: 15.0),
+              child: Text("Brother's Co. © 2022", style: kCompanyText),
+            ))
           ],
         ),
       );

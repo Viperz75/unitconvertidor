@@ -1,13 +1,15 @@
-import 'package:converter/screens/area.dart';
-import 'package:converter/screens/home.dart';
-import 'package:converter/screens/mass.dart';
-import 'package:converter/screens/volume.dart';
+import 'package:uni_convertido/screens/area.dart';
+import 'package:uni_convertido/screens/data.dart';
+import 'package:uni_convertido/screens/home.dart';
+import 'package:uni_convertido/screens/mass.dart';
+import 'package:uni_convertido/screens/time.dart';
+import 'package:uni_convertido/screens/volume.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
-import 'package:converter/constants.dart';
+import 'package:uni_convertido/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:converter/screens/length_screen.dart';
-import 'package:converter/screens/about.dart';
+import 'package:uni_convertido/screens/length_screen.dart';
+import 'package:uni_convertido/screens/about.dart';
 
 class Bar extends StatelessWidget {
   const Bar({
@@ -22,7 +24,7 @@ class Bar extends StatelessWidget {
         children: <Widget>[
           DrawerHeader(
             child: Text(
-              'UNIT CONVERTER',
+              'UNIT CONVERTIDOR',
               style: kAppBarTextStyle,
             ),
           ),
@@ -131,6 +133,32 @@ class Bar extends StatelessWidget {
                         icon: Icon(FontAwesomeIcons.jugDetergent,
                             color: Colors.white),
                         label: Text('Volume', style: kDrawerTexts),
+                      ),
+                      TextButton.icon(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Data(),
+                            ),
+                          );
+                        },
+                        icon: Icon(FontAwesomeIcons.wifi,
+                            color: Colors.white),
+                        label: Text('Data', style: kDrawerTexts),
+                      ),
+                      TextButton.icon(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Time(),
+                            ),
+                          );
+                        },
+                        icon: Icon(FontAwesomeIcons.clock,
+                            color: Colors.white),
+                        label: Text('Time', style: kDrawerTexts),
                       ),
                     ],
                   ),
